@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-
+//indexing 0
 using namespace std;
 
 int main()
@@ -25,7 +25,7 @@ int main()
     }
     
     // for(int i=1; i<= size ; i++){
-    //     mpp[i] = mpp[i-1] + vt[i];
+    //     mpp[i] = mpp[i-1] + vt[i];        // for 1 indexing
     // }
     
     // cout<<"quaries";
@@ -35,6 +35,7 @@ int main()
         cout<<"l and r values";
         int l,r;
         cin>>l>>r;
+        if(l==0) cout<< mpp[r];
         cout<<(mpp[r] - mpp[l-1] ) <<endl;
     
     return 0;
