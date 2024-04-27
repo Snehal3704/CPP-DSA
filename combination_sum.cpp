@@ -12,12 +12,12 @@ void getcombination(vector<int> vt , int target , int size, vector<vector<int>> 
     if(target >= vt[pt])        // for sorted array 
     {
         temp.push_back(vt[pt]);
-        getcombination(vt,target - vt[pt],size,res,temp,pt);
-        temp.pop_back();
-        getcombination(vt, target, size, res, temp, pt+1);
+        getcombination(vt,target - vt[pt],size,res,temp,pt);        //pick 
+        temp.pop_back();        //after finding all the combinations of the same value pair ex:(2,2,2) or(1,1,1) then we have to delete last value now arr will be(1,1) or(2,2) then again will check all the non pick combinations
+        getcombination(vt, target, size, res, temp, pt+1);    //nonpick
     }
     else{
-       getcombination(vt, target, size, res, temp, pt+1); 
+       getcombination(vt, target, size, res, temp, pt+1); //non pick
     }
 
     
