@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//arr=2,3,6,7 target =7
 void getcombination(vector<int> vt , int target , int size, vector<vector<int>> &res ,vector<int> temp , int pt){
     if(pt == size){
         if(target == 0){
@@ -9,7 +9,7 @@ void getcombination(vector<int> vt , int target , int size, vector<vector<int>> 
         return;
     }
 
-    if(target >= vt[pt])        // for sorted array 
+    if(target >= vt[pt])        
     {
         temp.push_back(vt[pt]);
         getcombination(vt,target - vt[pt],size,res,temp,pt);        //pick 
@@ -17,7 +17,9 @@ void getcombination(vector<int> vt , int target , int size, vector<vector<int>> 
         getcombination(vt, target, size, res, temp, pt+1);    //nonpick
     }
     else{
-       getcombination(vt, target, size, res, temp, pt+1); //non pick
+       getcombination(vt, target, size, res, temp, pt+1); //non pick  
+        //for givven array it will activate when temp =(2,2,2) 
+        
     }
 
     
