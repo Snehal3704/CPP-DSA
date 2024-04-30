@@ -10,19 +10,19 @@ void getcombination(vector<int> vt,vector<vector<int>> &res, int ind, int target
         return;
     }
         
-
-     for(int i=ind; i<n; i++){
-        if((i > ind) and (arr[i] == arr[i-1])){
-            continue;
-        }
-        if(arr[i] > target){
-            break;
-        }
-        st.push_back(arr[i]);
-        combinations(arr, n, i+1, target-arr[i], st);
-        st.pop_back();
+for(int i = ind ; i < vt.size() ; i++){
+        if(i>ind and vt[i] == vt[i-1])
+        continue;
+        if(target >= vt[i])        // for sorted array 
+    {
+        temp.push_back(vt[i]);
+        getcombination(vt,res,i+1,target-vt[i],size,temp);        //pick
+        temp.pop_back();
+           
     }
     
+
+    }
 
     }
     
