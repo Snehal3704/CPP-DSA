@@ -6,11 +6,16 @@ void getcombination(vector<int> vt,vector<vector<int>> &res, int ind, int target
 
 
     if(target == 0){
-        res.push_back(temp);
+        for(auto it: temp){
+            cout<<it<<" ";
+        }
+        cout<<"\n";
+        //res.push_back(temp);
         return;
     }
         
-for(int i = ind ; i < vt.size() ; i++){
+
+    for(int i = ind ; i < vt.size() ; i++){
         if(i>ind and vt[i] == vt[i-1])
         continue;
         if(target >= vt[i])        // for sorted array 
@@ -21,8 +26,6 @@ for(int i = ind ; i < vt.size() ; i++){
            
     }
     
-
-    }
 
     }
     
@@ -59,12 +62,12 @@ int main(){
 
     getcombination(vt,res,ind,target,size,temp);
 
-    for(int i=0 ; i< res.size() ; i++)
-    {
-        for(int j=0 ; j<res[i].size(); j++){
-            cout<<res[i][j] <<" ";
-        }
-        cout<<"\n";
-    }
+    // for(int i=0 ; i< res.size() ; i++)
+    // {
+    //     for(int j=0 ; j<res[i].size(); j++){
+    //         cout<<res[i][j] <<" ";
+    //     }
+    //     cout<<"\n";
+    // }
 
 }
