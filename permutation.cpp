@@ -19,11 +19,6 @@ void getpermutations(vector<vector<int>> &res , vector<int> &temp , vector<int> 
             temp.pop_back();
 
         }
-
-        else{
-            getpermutations(res,temp,arr,size,visited);
-
-        }
     }
 
 }
@@ -50,7 +45,7 @@ int main(){
     vector<int> temp;
     int ind = 0;
 
-    getpermutations(res,temp,arr,size,visited,ind);
+    getpermutations(res,temp,arr,size,visited);
     for(int i=0 ; i< res.size() ; i++)
     {
         for(int j=0 ; j< res[i].size() ; j++)
