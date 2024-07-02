@@ -16,7 +16,7 @@ void bruteforce(vector<int> arr, int n , int k ){
     }
 
     ind=0;
-    for(int i=k-1 ; i< n ; i++){
+    for(int i=n-k ; i< n ; i++){
         arr[i] = temp[ind];
         ind++;
     }
