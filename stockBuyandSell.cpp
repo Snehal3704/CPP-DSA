@@ -17,16 +17,23 @@ int brute(vector<int> arr , int n){
 
 }
 
- int maxProfit(vector<int>prices) {
-        int maxP = 0, left= 0, right = 0;
-        while (right < prices.size()){
-            if (prices[right] > prices[left])
-                maxP = max(maxP, prices[right] - prices[left]);
-            else
-                left= right;
-            ++right;
-        }
-        return maxP;
+ int maxProfit(vector<int>arr) {
+    int maxPro = 0;
+    int n = arr.size();
+    int minPrice = INT_MAX;
+
+    // cout<<minPrice<<endl;
+
+    for (int i = 0; i < arr.size(); i++) {
+        minPrice = min(minPrice, arr[i]);
+        // cout<<i <<"th"<<endl;
+        // cout<<minPrice <<endl;
+
+        maxPro = max(maxPro, arr[i] - minPrice);
+        // cout<<maxPro << endl;
+    }
+    
+    return maxPro;
     }
 
 int main(){
@@ -40,9 +47,9 @@ int main(){
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-
-    int maxprofit = brute(arr,n);
-
+    
+    int maxprofit = maxProfit(arr);
+    cout<<"final ans";
     cout<<maxprofit;
 
 
