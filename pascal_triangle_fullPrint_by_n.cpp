@@ -2,28 +2,56 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> generateRow(int row) {
-    long long ans = 1;
-    vector<int> ansRow;
-    ansRow.push_back(1); //inserting the 1st element
+int nCr(int n, int r) {
+    long long res = 1;
 
-    //calculate the rest of the elements:
-    for (int col = 1; col < row; col++) {
-        ans = ans * (row - col);
-        ans = ans / col;
-        ansRow.push_back(ans);
+    // calculating nCr:
+    for (int i = 0; i < r; i++) {
+        res = res * (n - i);
+        res = res / (i + 1);
     }
-    return ansRow;
+    return (int)(res);
 }
 
-vector<vector<int>> pascalTriangle(int n) {
-    vector<vector<int>> ans;
 
-    //store the entire pascal's triangle:
-    for (int row = 1; row <= n; row++) {
-        ans.push_back(generateRow(row));
+void pascalTriangle(int n) {
+    for(int r=1 ; r<= n ; r++){
+        for(int c =1 ; c <= r ; c++){
+            cout<< nCr(r-1 , c-1)<<" ";
+        }
+        cout<<endl;
     }
-    return ans;
+}
+
+vector<int> pascalTriangle_byRow(int n) {
+    long long ans = 1;
+    vector<int> temp;
+    temp.push_back(1); // adding 1st element
+
+    //Printing the rest of the part:
+    for (int i = 1; i < n; i++) {
+        ans = ans * (n - i);
+        ans = ans / i;
+        temp.push_back(ans);
+    }
+
+    return temp;
+    
+}
+
+void print_Pastri(int n){
+vector<vector<int>> ans;
+    for(int row =1 ; row <= n ; row++){
+        ans.push_back(pascalTriangle_byRow(row));
+    }
+
+    for(int i=0 ; i < ans.size() ; i++){
+        for(int j =0 ; j< ans[i].size() ; j++){
+            cout<<ans[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    
 }
 
 int main()
@@ -32,12 +60,7 @@ int main()
     int n ;
     cin>>n;
     
-    vector<vector<int>> ans = pascalTriangle(n);
-    for (auto it : ans) {
-        for (auto ele : it) {
-            cout << ele << " ";
-        }
-        cout << "n";
-    }
+    print_Pastri(n);
+    
     return 0;
 }
