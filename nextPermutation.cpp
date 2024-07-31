@@ -5,7 +5,7 @@ using namespace std;
 void optimal(vector<int> &arr, int n){
 int ind = -1;
     // Step 1: Find the break point:
-    for(int i= n-2 ; i >=0 ; i++){
+    for(int i= n-2 ; i >=0 ; i--){
         if (arr[i] < arr[i + 1]) {
             // index i is the break point
             ind = i;
