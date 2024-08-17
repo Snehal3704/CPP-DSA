@@ -55,6 +55,7 @@ int main(){
     cout<<"enter rows";
     int row;
     cin>>row;
+     
 
     cout<<"enter cols";
     int col;
