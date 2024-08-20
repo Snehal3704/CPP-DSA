@@ -4,8 +4,7 @@ using namespace std;
 
 vector<vector<int>> brute(vector<vector<int>> matrix , int rows, int cols){
     int n= matrix.size();
-    vector<vector<int>> rotated(n,vector < int > (n, 0));
-
+    
     for(int i=0 ; i< n ; i++){
         for(int j=0 ; j<n ; j++){
             rotated[j][n-i-1] = matrix[i][j];
