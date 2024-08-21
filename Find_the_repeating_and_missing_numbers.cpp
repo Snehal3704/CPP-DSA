@@ -36,7 +36,7 @@ void optimal(vector<int> arr, int n){
     long long s2 = 0; 
     for(int i=0; i<n; i++){
         s1 = s1 + arr[i]; // sum of the array
-        s2 = s2 + (arr[i]*arr[i]); // sum of the square of the array elements
+        s2 = s2 + ((long long)arr[i]* (long long)arr[i]); // sum of the square of the array elements
     }
 
     long long x = s1 - sn1;  // x = repeating - missing
