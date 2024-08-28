@@ -5,7 +5,7 @@ using namespace std;
 vector<int> better(vector<int> arr ,int n){
     unordered_map<int,int> mpp;
     vector<int> res;
-    int maj_ele=  n/3;
+    int maj_ele= (int) n/3 + 1;
 
     for(int i =0 ; i< n ; i++){
         mpp[arr[i]]++;
