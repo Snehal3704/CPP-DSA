@@ -30,6 +30,7 @@ int main(){
     return 0;
 }
 
+
 // Some other stl functions on binary search:
 // Lower Bound
 // Operation :
