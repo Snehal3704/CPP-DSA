@@ -76,9 +76,9 @@ int optimal(vector<int> arr){
         }
 
         //we are in the left:
-        if ((mid % 2 == 1 && arr[mid] == arr[mid - 1])
-                || (mid % 2 == 0 && arr[mid] == arr[mid + 1])) {
-            //eliminate the left half:
+        if ((mid % 2 == 1 && arr[mid] == arr[mid - 1])  //if i am standing at odd index so i am searching if my past element is same , bcz for left part(even,odd) pair so if i am odd i will be checking if my past element is even
+                || (mid % 2 == 0 && arr[mid] == arr[mid + 1])) {    // either ways it can be happened that mid is even then we have to check my next elemt is equal to me 
+            // so eliminate the left half:
             low = mid + 1;
         }
         //we are in the right:
