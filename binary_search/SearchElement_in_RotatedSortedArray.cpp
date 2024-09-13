@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 //with duplicate eliments
 
 int optimal(vector<int>arr , int k){
