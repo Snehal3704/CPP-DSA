@@ -7,6 +7,7 @@ using namespace std;
 
 int optimal(vector<int>arr , int k){
     
+    
     int low = 0 , high = arr.size() - 1;
 
     while(low <= high){
