@@ -20,6 +20,7 @@ int main()
         hash[arr[i]] +=1;
     } 
 
+    
     cout<<"how many number or query are you giving?";
     int n;
     cin>>n;
