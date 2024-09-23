@@ -61,6 +61,5 @@ int main(){
     else
         cout << "We can make bouquets on day " << ans << "\n";
     
-
     return 0;
 }
