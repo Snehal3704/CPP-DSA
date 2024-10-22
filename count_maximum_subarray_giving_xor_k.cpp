@@ -54,29 +54,25 @@ int better(vector<int> arr , int n , int k){
 
 int optimal(vector<int> arr,int n , int k){
     
-    int xr = 0;
-    map<int, int> mpp; //declaring the map.
-    mpp[xr]++; //setting the value of 0.
-    int cnt = 0;
+     unordered_map<int,int> mpp; 
+    mpp[0] = 1;
 
-    for (int i = 0; i < n; i++) {
-        // prefix XOR till index i:
-        xr = xr ^ arr[i];
+    int cnt = 0; 
+    int xorr = 0; 
 
-        //By formula: x = xr^k:
-        int x = xr ^ k;
+    for(int i=0; i<n; i++){
+        xorr = xorr^arr[i];
 
-        // add the occurrence of xr^k
-        // to the count:
-        cnt += mpp[x];
+        int rem = xorr^k ;
 
-        // Insert the prefix xor till index i
-        // into the map:
-        mpp[xr]++;
+        if(mpp.find(rem) != mpp.end() ){
+            cnt = cnt+mpp[rem]; 
+        }
+
+        mpp[xorr]++; 
     }
-    return cnt;
 
-    return cnt;
+    cout<<cnt<<endl;
 }
 
 
