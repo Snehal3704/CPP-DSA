@@ -16,7 +16,7 @@ class node {
 void print(node* head){
     node* temp = head;
     while(temp){
-        cout<<temp->value;
+        cout<<temp->value <<" ";
         temp=temp->next;
     }
 }
@@ -32,6 +32,8 @@ node* convert_arr_to_ll(int arr[]){
         temp->next=temp2;
         temp=temp2;
     }
+
+    return head;
 }
 
 node* deletion(node* head , int k){
@@ -78,4 +80,5 @@ int main()
 
     return 0;
 
+}
 }
