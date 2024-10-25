@@ -37,7 +37,7 @@ node* convert_arr_to_ll(vector<int> arr){
 
 int length(node*head){
     
-    int cnt =0 ;
+    int cnt =1 ;
     node* temp = head;
 
     while (temp != NULL){
