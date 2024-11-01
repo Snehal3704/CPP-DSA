@@ -10,7 +10,7 @@ int merge(vector<int> &arr, int low , int high,int mid){
     int cnt = 0;
 
     while(left <= mid and right <= high){
-        if(arr[left]> 2* arr[right]){
+        if((long long)arr[left] > 2LL * arr[right]){
             cnt += mid + 1 - left;
             right++;
 
