@@ -18,26 +18,16 @@ int convert2binary(int n){
     return stoi(res);
 }
 
-int convert2decimal(int n){
-    int res = 0;
-    int pow =1;
-
-    while( n > 0 ){
-
-        int num = n % 10;
-        res = res + ( pow * num );
-        n = n / 10;
-        pow *=2;
-
-    }
-    return res;
+void setbit(int &n, int i){
+    n = (n | (1 << i));
+    cout<< n;
 }
 
 int main(){
+
     int n = 13;
+    int i = 2;
+    setbit(n,i);
 
-    cout<< convert2binary(n);
-    cout<<endl;
 
-    cout<< convert2decimal(convert2binary(n));
 }
