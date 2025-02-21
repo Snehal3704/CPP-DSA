@@ -5,21 +5,31 @@ using namespace std;
 // Time Complexity = O(N)
 // Space Complexity = O(1) 
 
-void optimal1(vector<int> arr, int n){
-    int right = 0;  
-    int prod = 1; 
-    int maxi = 1; 
+//lowest negetive can be higest positive if encountring with neg no
+int optimal1(vector<int> arr){
+    int n = arr.size();
+        if (n == 0) return 0;
 
-    while(right < n){
-        prod = prod*arr[right];
-        if(prod == 0){
-            prod = 1; 
+        int max_product = INT_MIN;
+        int min_product = INT_MAX;
+        int result = arr[0];
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < 0) {
+                swap(max_product, min_product);
+            }
+
+            max_product = max(arr[i], max_product * arr[i]);
+            min_product = min(arr[i], min_product * arr[i]);
+            cout<< max_product <<" " <<min_product <<" "<<endl;
+
+            result = max(result, max_product);
+            cout<<result<<" ";
         }
-        maxi = max(maxi, prod);
-        right++; 
+        cout<<endl;
+
+        return result;
     }
-    cout<< maxi<<endl;
-}
 
 
 // Time Complexity = O(N)
