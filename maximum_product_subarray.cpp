@@ -63,18 +63,7 @@ void optimal2(vector<int> arr, int n){
 }
 
 int main(){ 
-    int n;
-    cout<<"enter the size of the array " ;
-    cin >> n; 
-    vector<int> arr; 
-
-    cout<<"enter the elements of the array "; 
-    for(int i=0; i<n; i++){
-        int a; 
-        cin >> a; 
-        arr.push_back(a); 
-    }
-
-    optimal1(arr, n)  ;
-    optimal2(arr, n)  ;
+    vector<int> arr = {-1 , -3 , -2 , 1};
+    cout<<endl;
+    cout<< optimal1(arr); 
 }
